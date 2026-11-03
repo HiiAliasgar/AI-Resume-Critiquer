@@ -1,72 +1,61 @@
-# AI Resume Critiquer 📃
+# AI Resume Critiquer
 
-An interactive Streamlit web app that uses AI to provide personalized feedback on resumes. Upload your resume (PDF or TXT format), optionally specify a job role, and receive detailed, constructive critique focused on content clarity, skills presentation, experience descriptions, and tailored suggestions for your targeted job role.
+A Streamlit application that accepts a resume in PDF or TXT format and uses an LLM to generate structured feedback. A target job role can be supplied to make the critique more relevant.
 
 ## Features
 
-- 📄 **PDF & TXT Support** — Upload resumes in PDF or plain text format
-- 🎯 **Job-Specific Feedback** — Optionally target a specific role for tailored advice
-- 🤖 **AI-Powered Analysis** — Uses Groq's LLM API for intelligent resume critique
-- ⚡ **Fast Results** — Get comprehensive feedback in seconds
+- PDF and plain-text resume input.
+- Optional target-role context.
+- AI-generated feedback on clarity, skills presentation and experience descriptions.
+- Suggestions for improving the resume for a chosen role.
+
+## Technology
+
+- Python 3.11+
+- Streamlit
+- Groq API (Llama-family model)
+- PyPDF2
+- python-dotenv
 
 ## Setup
-
-### 1. Clone the repository
 
 ```bash
 git clone https://github.com/HiiAliasgar/AI-Resume-Critiquer.git
 cd AI-Resume-Critiquer
-```
 
-### 2. Install dependencies
-
-```bash
-# Using uv (recommended)
+# Install dependencies
 uv sync
+# Or: pip install -r requirements.txt
 
-# Or using pip
-pip install -r requirements.txt
-```
-
-### 3. Set up environment variables
-
-Create a `.env` file in the project root:
-
-```bash
+# Create local environment configuration
 cp .env.example .env
 ```
 
-Then edit `.env` and add your Groq API key:
+Add your Groq key to `.env`:
 
+```env
+GROQ_API_KEY=your_groq_api_key
 ```
-GROQ_API_KEY=your_groq_api_key_here
-```
 
-Get a free API key at [console.groq.com](https://console.groq.com/)
-
-### 4. Run the app
+Run the application:
 
 ```bash
 streamlit run main.py
 ```
 
-The app will open in your browser at `http://localhost:8501`.
+The local interface opens at `http://localhost:8501`.
 
 ## Usage
 
-1. Upload your resume (PDF or TXT)
-2. Optionally enter the job role you're targeting
-3. Click **"Analyze Resume"**
-4. Review the AI-generated feedback
+1. Upload a PDF or TXT resume.
+2. Enter a target role if you want role-specific feedback.
+3. Submit the resume for analysis.
+4. Review the generated critique and decide which suggestions are appropriate.
 
-## Tech Stack
+## Responsible use
 
-- **Python 3.11+**
-- **Streamlit** — Web UI framework
-- **Groq API** — LLM inference (Llama 3.1)
-- **PyPDF2** — PDF text extraction
-- **python-dotenv** — Environment variable management
+The application provides AI-generated suggestions, not hiring decisions or guarantees of interview success. Review all recommendations for factual accuracy; do not add skills or experience that you do not have. Avoid uploading sensitive personal information unless you understand how the configured model provider processes it.
 
-## License
+## Source
 
-MIT License — see [LICENSE](LICENSE) for details.
+[GitHub repository](https://github.com/HiiAliasgar/AI-Resume-Critiquer)
