@@ -23,6 +23,6 @@ jobs:
           python-version: "3.11"
           cache: pip
       - name: Install application and test dependencies
-        run: python -m pip install -e . pytest
+        run: python -m pip install streamlit PyPDF2 groq python-dotenv pytest
       - name: Run tests
         run: python -m pytest -q
