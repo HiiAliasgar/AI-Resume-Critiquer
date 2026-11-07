@@ -25,7 +25,7 @@ cd AI-Resume-Critiquer
 
 # Install dependencies
 uv sync
-# Or: pip install -r requirements.txt
+# Or: pip install -e .
 
 # Create local environment configuration
 cp .env.example .env
@@ -51,6 +51,8 @@ The local interface opens at `http://localhost:8501`.
 2. Enter a target role if you want role-specific feedback.
 3. Submit the resume for analysis.
 4. Review the generated critique and decide which suggestions are appropriate.
+
+Uploads are limited to 5 MB. PDF and UTF-8 TXT files are supported; image-only PDFs may yield no extractable text. Uploaded resume content is sent to the configured Groq model for analysis.
 
 ## Responsible use
 
